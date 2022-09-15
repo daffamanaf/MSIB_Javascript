@@ -1,0 +1,87 @@
+<script language="javascript">
+//array of object
+let m1 = {nama:"Budi", nilai:75};
+let m2 = {nama:"Bedu", nilai:55};
+let m3 = {nama:"Dedi", nilai:95};
+let m4 = {nama:"Dudi", nilai:88};
+let m5 = {nama:"Deden", nilai:25};
+let m6 = {nama:"Desi", nilai:65};
+
+let mahasiswa = [m1, m2, m3, m4, m5, m6];
+/*
+for(m of mahasiswa) {
+    let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+    document.write(`<br/>Nama : ${m.nama} - Nilai : ${m.nilai} - Keterangan : ${ket}`);
+}
+*/
+</script>
+<h3 align="center">Daftar Nilai Mahasiswa</h3>
+<table align="center" border="1" cellpadding="10">
+	<thead>
+		<tr bgcolor="bluesky">
+			<th>NO</th>
+			<th>NAMA</th>
+			<th>NILAI</th>
+			<th>KETERANGAN</th>
+			<th>GRADE</th>
+			<th>PREDIKAT</th>
+		</tr>
+	</thead>
+	<tbody>
+        <script language="javascript">
+        let no = 1;    
+		var grd;
+		var prd;
+		var warna;
+        for(m of mahasiswa) { 
+        //set kelulusan
+        let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+        //set grade A - E (if multi kondisi)
+		// A = 85 - 100, B = 75 - < 85 dst 
+		// menentukan grade nilai           
+                    
+		if (m.nilai >= 85 && m.nilai <= 100) {
+			grd = "A";}
+        else if (m.nilai >= 75 && m.nilai < 85) {
+            grd = "B";}
+        else if (m.nilai >= 55 && m.nilai < 75) {
+			grd = "C";}
+        else if (m.nilai >= 35 && m.nilai < 55) {
+            grd = "D";}
+		else {
+            grd = "E";}
+			//set predikat ( swtich case)
+            //A = Memuaskan, B=Bagus, C=Cukup, D=kurang, E=Buruk
+            // codingan set predikat menggunakan switch
+        switch (grd) {
+            case "A":
+                prd = "Memuaskan";
+            break;
+            case "B":
+                prd = "Bagus";
+            break;
+            case "C":
+                prd = "Cukup";
+            break;
+            case "D":
+                prd = "Kurang";
+			break;
+            default:
+				prd = "Buruk";
+            break;
+                }
+			//set warna-warni baris ganjil & genap
+            // set warna
+            const warna = (no % 2 == 1) ? "#ABD9FF" : "#C3F8FF"; 
+            document.write(`<tr bgcolor=${warna}>
+                <td>${no++}</td>
+                <td>${m.nama}</td>
+                <td>${m.nilai}</td>
+                <td>${ket}</td>
+                <td>${grd}</td>
+                <td>${prd}</td>
+            </tr>`);
+            }
+        </script>
+	</tbody>
+</table>
