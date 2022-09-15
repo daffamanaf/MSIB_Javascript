@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tugas2 Javascript</title>
+</head>
+<body>
+    <h1>Daftar Pegawai</h1>
+    <table cellpading="10">
+        <thead>
+            <tr bgcolor="grey">
+                <td>No</td>
+                <td>Nama</td>
+                <td>Jabatan</td>
+                <td>Agama</td>
+                <td>Gaji Pokok</td>
+                <td>Tunjangan Jabatan</td>
+                <td>Tunjangan Kesehatan</td>
+                <td>Gaji Kotor</td>
+                <td>Zakat Profesi</td>
+                <td>Take Home Pay</td>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                let jabatan = "Manager";
+                let gapok = 0;
+                for (let jml_pgw = 1; jml_pgw <= 100; jml_pgw++) {                   					
+					if(jml_pgw > 0 && jml_pgw <=25) jabatan = "Manager";
+					else if(jml_pgw > 25 && jml_pgw <= 50) jabatan = "Asisten Manager";
+					else if(jml_pgw > 50 && jml_pgw <= 75) jabatan = "Supervisor";
+					else jabatan = "Staff";                    
+                switch (jabatan) {
+					case "Manager":
+					gapok = 15000000;
+					break;
+					case "Asisten Manager": 
+					gapok = 10000000;
+					break;
+					case "Supervisor": 
+					gapok = 7000000;
+					break;
+					case "Staff":
+					gapok = 4000000;
+					break;
+                    }                   
+                let tjab = gapok * 0.2;
+                let tkes = gapok * 0.1;
+                let gakot = gapok + tjab + tkes;
+                let agama = "Muslim";				
+                jml_pgw % 2 == 1 ? agama : agama = "Non Muslim";
+                const warna = agama === "Muslim" ? "yellow" : "blue";
+				let zakat = 0;
+                if (agama === "Muslim" && gakot >= 7000000) zakat = gakot * 0.025;
+					else zakat = "0";                   
+                const thp = gakot - zakat;                    
+                document.write(`
+                    <tr bgcolor=${warna}>
+                        <td>${jml_pgw}</td>
+                        <td>Pegawai_${jml_pgw}</td>
+                        <td>${jabatan}</td>
+                        <td>${agama}</td>
+                        <td>Rp${gapok}</td>
+                        <td>Rp${tjab}</td>
+                        <td>Rp${tkes}</td>
+                        <td>Rp${gakot}</td>
+                        <td>Rp${zakat}</td>
+                        <td>Rp${thp}</td>
+                    </tr>`)
+                }    
+              </script>
+        </tbody>
+    </table>
+</body>
+</html>
