@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 Javascript Daffa Adil Manaf</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+
+    <form id="frmpembelian" align="left">
+        <table align="left">
+          <tr>
+            <td><label>Nama</label></td>
+            <td><input type="text" class="form-control" name="pembeli" placeholder="Masukan Nama Anda"/></td>
+          </tr>
+          <tr>
+            <td><label>Barang</label></td>
+            <td><input type="text" class="form-control" name="nmbrg" placeholder="Masukan Nama Barang" /></td>
+          </tr>
+          <tr>
+            <td><label>Harga</label></td>
+            <td><input type="text" class="form-control" name="hrbrg" placeholder="Masukan Harga Barang"/></td>
+          </tr>
+          <tr>
+            <td><label>Jumlah</label></td>
+            <td><input type="text" class="form-control" name="jmlbrg" placeholder="Masukan Jumlah Barang"/></td>
+          </tr>
+          <tr>
+            <td><label>Valuta Asing</label></td>
+            <td>
+              <select name="pilvls" onchange="konversiuang()" class="form-control">
+                <option value="">-- Pilih Valas --</option>
+                <option value="14917">-- USD --</option>
+                <option value="104">-- JPY --</option>
+                <option value="248">-- RUB --</option>
+                <option value="14918">-- EUR --</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <p>
+        </p>
+        <fieldset>
+          <legend align="left">Checkout</legend>
+          <p id="checkout"></p>
+        </fieldset>
+      </form>
+
+      <script>
+        function konversiuang() {
+          let forms = document.getElementById('frmpembelian');
+          let nama = forms.pembeli.value;
+          let barang = forms.nmbrg.value;
+          let harga = forms.hrbrg.value;
+          let jumlah = forms.jmlbrg.value;
+          let valas = forms.pilvls.value;
+          let total = harga * jumlah / valas;
+          let output = `Data pembelian <br/> 
+        <br/>Nama Pembeli: ${nama}
+        <br/>Nama Barang: ${barang}
+        <br/>Harga Barang: ${harga}
+        <br/>Jumlah Barang: ${jumlah}
+        <br/>Valuta Asing: ${valas}
+        <br/>Total Bayar: ${total.toFixed(2)}
+        `;
+    
+          document.getElementById('checkout').innerHTML = output;
+        }
+      </script>
+    </body>
+  </html>
