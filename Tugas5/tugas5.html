@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tugas 5 Javascript Daffa Adil Manaf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  </head>
+  <body>
+    <div class="container px-5 my-5">
+      <div class="alert alert-primary" role="alert">
+        <h3 align="center">Kalkulator Daffa Adil Manaf</h3>
+      </div>
+      <form id="calcForm">
+        <div class="form-floating mb-3">
+          <input class="form-control" name="bilangan1" type="text" data-sb-validations="required" />
+          <label for="bilangan1">Bilanga Pertama</label>
+          <div class="invalid-feedback" data-sb-feedback="bilangan1:required">Bilanga Pertama is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" name="bilangan2" type="text" data-sb-validations="required" />
+          <label for="bilangan2">Bilanga kedua</label>
+          <div class="invalid-feedback" data-sb-feedback="bilangan2:required">Bilanga kedua is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" name="hasil" type="text" placeholder="" data-sb-validations="" value="" disabled />
+          <label for=""></label>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary btn-lg" value="btn_tambah" name="btn_tambah" onclick="hitung('btn_tambah')" type="button">+</button>
+          <button class="btn btn-info btn-lg" value="btn_kurang" name="btn_kurang" onclick="hitung('btn_kurang')" type="button">-</button>
+          <button class="btn btn-success btn-lg" value="btn_kali" name="btn_kali" onclick="hitung('btn_kali')" type="button">x</button>
+          <button class="btn btn-warning btn-lg" value="btn_bagi" name="btn_bagi" onclick="hitung('btn_bagi')" type="button">/</button>
+          <button class="btn btn-danger btn-lg" value="btn_pangkat" name="btn_pangkat" onclick="hitung('btn_pangkat')" type="button">^</button>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script language="javascript" src="js/kalku.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
