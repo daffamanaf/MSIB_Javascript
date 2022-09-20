@@ -1,0 +1,47 @@
+<script>
+class tingkatgempa{
+    constructor(gempa, lokasi, skala){
+        this.gempa = gempa;
+        this.lokasi = lokasi;
+        this.skala = skala;
+    }
+    getkerusakan(){
+        if(this.skala >= 0 && this.skala <= 2) this.kerusakan = 'tidak terasa';
+        else if(this.skala >= 2 && this.skala < 4) this.kerusakan = 'bangunan retak-retak';
+        else if(this.skala >= 4 && this.skala <= 6) this.kerusakan = 'bangunan roboh';
+        else this.kerusakan = '';
+        return this.kerusakan;
+    }
+    cetak(){
+        document.write('Nama Gempa: '+ this.gempa +
+        '<br/>Lokasi: ' + this.lokasi +
+        '<br/>Skala: ' + this.skala +
+        '<br/>kerusakan: ' + this.getkerusakan() +
+        '<hr/>');
+    }Sulawesi
+
+    mencetak(){
+        document.write(`Nama Gempa:  ${this.gempa}
+        <br/>Lokasi: ${this.lokasi}
+        <br/>Skala: ${this.skala}
+        <br/>kerusakan: ${this.getkerusakan()}
+        <hr/>`);
+    }
+}
+
+//-------membuat object-----
+s1 = new tingkatgempa('g1','Aceh',4);
+s2 = new tingkatgempa('g2','Jakarta',5);
+s3 = new tingkatgempa('g3','Riau',2);
+s4 = new tingkatgempa('g4','Banten',4);
+s5 = new tingkatgempa('g5','Bali',5);
+s6 = new tingkatgempa('g6','Medan',6);
+s7 = new tingkatgempa('g7','Banjar',1);
+s8 = new tingkatgempa('g8','Jayapura',5);
+s9 = new tingkatgempa('g9','Manokwari',3);
+s10= new tingkatgempa('g10','Gorontalo',1);
+
+s1.mencetak(); s2.mencetak(); s3.mencetak(); s4.mencetak(); s5.mencetak(); s6.mencetak(); s7.mencetak(); s8.mencetak(); s9.mencetak(); s10.mencetak();
+
+</script>
+   
