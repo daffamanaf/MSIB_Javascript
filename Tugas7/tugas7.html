@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tugas Jquery</title>
+    <style>
+      *{
+        font-family: verdana;
+      }
+      body{
+        background: #eaf0f7;
+      }
+      hr{
+        background: black;
+      }
+      #container-gambar{
+        text-align: center;
+        background: white;
+        width: 50%;
+        margin: 40px auto;
+        padding: 1px 0 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+      #kuda, #sapi, #kambing, #BurungBangkai, #Macan, #Serigala{
+        background: #f65151;
+        padding: 50px;
+        margin: 0 15px;
+        display: inline-block;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      label{
+        cursor: pointer;
+        color: white;
+      }
+      #container-profile{
+        background: white;
+        width: 50%;
+        margin: 50px auto;
+        padding: 1px 0 1px 0;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+      h3{
+        text-align: center;
+      }
+      #container-button{
+        text-align: center;
+        padding: 10px 0;
+      }
+      button{
+        background: #5564ff;
+        color: #f4f4f4;
+        border: none;
+        margin: 0 10px;
+        padding: 8px;
+        border-radius: 5px;
+        transition: .15s;
+      }
+      .text1, .text2, .text3{
+        display: none;
+        padding: 0 20px;
+      }
+      button:hover{
+        background: #3e4bd3;
+        color: white;
+        transition: .15s;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container-gambar">
+      <h3>Hewan Ternak</h3>
+      <hr/>
+      <div>
+        <div id="kuda">
+          <label class="kuda">Kuda</label>
+          <audio></audio>
+        </div>
+        <div id="sapi">
+          <label class="sapi">Sapi</label>
+          <audio></audio>
+        </div>
+        <div id="kambing">
+          <label class="kambing">Kambing</label>
+          <audio></audio>
+        </div>
+      </div>
+	<br>
+	  <h3>Hewan Buas</h3>
+      <hr/>
+      <div>
+        <div id="BurungBangkai">
+          <label class="BurungBangkai">Burung Bangkai</label>
+          <audio></audio>
+        </div>
+        <div id="Macan">
+          <label class="Macan">Macan</label>
+          <audio></audio>
+        </div>
+        <div id="Serigala">
+          <label class="Serigala">Serigala</label>
+          <audio></audio>
+        </div>
+      </div>
+  </body>
+  <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+  <script type="text/javascript">
+    $("document").ready(function () {
+      $("#kuda").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/kuda.jpg)",
+          "background-size": "200px",
+          "transition": "0.2s"
+        });
+        $(".kuda").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/horse.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+      $("#sapi").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/sapi.jpg)",
+          "background-size": "200px",
+          "transition": "0.2s"
+        });
+        $(".sapi").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/cow.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+      $("#kambing").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/kambing.jpg)",
+          "background-size": "200px",
+          "transition": "0.2s"
+        });
+        $(".kambing").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/goat.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+      $("#kuda").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".kuda").css({
+          "opacity": "100%"
+        });
+      });
+      $("#sapi").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".sapi").css({
+          "opacity": "100%"
+        });
+      });
+      $("#kambing").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".kambing").css({
+          "opacity": "100%"
+        });
+      });
+	//pemisah
+	$("#BurungBangkai").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/burungbangkai.jpg)",
+          "background-size": "200px",
+          "transition": "0.2s"
+        });
+        $(".BurungBangkai").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/BBangkai.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+	$("#Macan").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/macan.png)",
+          "background-size": "150px",
+          "transition": "0.2s"
+        });
+        $(".Macan").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/Macan.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+	$("#Serigala").click(function () {
+        $(this).css({ 
+          "background": "url(gambar/serigala.png)",
+          "background-size": "200px",
+          "transition": "0.2s"
+        });
+        $(".Serigala").css({
+          "opacity": "0%"
+        });
+        $("audio").attr({
+          "src": "voice/Serigala.mp3",
+          "autoplay": "autoplay"
+        });
+      });
+	  $("#BurungBangkai").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".BurungBangkai").css({
+          "opacity": "100%"
+        });
+      });
+	  $("#Macan").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".Macan").css({
+          "opacity": "100%"
+        });
+      });
+	  $("#Serigala").mouseout(function () {
+        $(this).css({ 
+          "background": "#f65151"
+        });
+        $(".Serigala").css({
+          "opacity": "100%"
+        });
+      });
+    });
+  </script>
+</html>
